@@ -5,13 +5,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def test():
-    score_rias = 9.5
-    score_asia = 8.0
-    score_akeno = 9.9
-    score_koneko = 7.9
+    score = {
+        "Rias": 9.8,
+        "Asia": 8.0,
+        "Akeno": 9.9,
+        "Koneko": 7.0
+    }
 
-    return render_template("index.html", score_rias=score_rias,
-                           score_asia=score_asia, score_akeno=score_akeno, score_koneko=score_koneko)
+    return render_template("index.html", score=score)
 
 
 @app.route("/Rias")
