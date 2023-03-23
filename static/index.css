@@ -1,0 +1,39 @@
+.cont {
+    height: 250px;
+    margin: 0px;
+    position: relative;
+}
+
+img {
+    width: 400px;
+    height: 250px;
+    margin: 0px;
+}
+
+button {
+    width: 100px;
+    position: absolute;
+    top: 116px;
+    left: 1750px
+}
+
+a {
+    color: aliceblue;
+}
+
+.number {
+
+    font-size: 50px;
+    position: absolute;
+    top: 90px;
+    left: 900px;
+
+
+}
+
+.name {
+    font-size: 50px;
+    position: absolute;
+    top: 87px;
+    left: 500px;
+}

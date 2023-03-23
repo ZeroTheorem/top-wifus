@@ -1,0 +1,22 @@
+img {
+    width: 40%;
+    border-radius: 30%;
+}
+
+.lead {
+    font-size: 400%;
+}
+
+button {
+    width: 100px;
+    margin-left: 20px;
+    margin-bottom: 6px;
+}
+
+
+input {
+    width: 100px;
+    height: 35px;
+
+
+}
