@@ -8,17 +8,16 @@ img {
     width: 400px;
     height: 250px;
     margin: 0px;
+
 }
 
-button {
+
+
+a {
     width: 100px;
     position: absolute;
     top: 116px;
     left: 1750px
-}
-
-a {
-    color: aliceblue;
 }
 
 .number {

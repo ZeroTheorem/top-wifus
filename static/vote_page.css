@@ -10,5 +10,12 @@ img {
 .form-control {
     width: 60px;
     margin-left: 621px;
+    text-align: center;
 
+
+}
+
+a {
+    margin-top: 10px;
+    margin-left: 7px;
 }
