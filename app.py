@@ -9,8 +9,14 @@ curs = sq.Cursor(conn)
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def test():
+    if request.method == 'POST':
+        result = request.form['vote_Rias']
+        curs.execute(f"UPDATE topwifus SET RIAS={result}")
+        conn.commit()
+        return redirect("/")
+
     curs.execute("SELECT * FROM topwifus")
     reuslt = curs.fetchone()
     score = {"Rias": reuslt[0],
