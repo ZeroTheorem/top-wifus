@@ -17,6 +17,7 @@ def test():
              "Asia": reuslt[1],
              "Akeno": reuslt[2],
              "Koneko": reuslt[3]}
+
     return render_template("index.html", score=score)
 
 
