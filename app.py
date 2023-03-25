@@ -12,10 +12,16 @@ app = Flask(__name__)
 @app.route("/", methods=['POST', 'GET'])
 def test():
     if request.method == 'POST':
-        result = request.form['vote_Rias']
-        curs.execute(f"UPDATE topwifus SET RIAS={result}")
-        conn.commit()
-        return redirect("/")
+        if 'vote_Rias' in request.form:
+            result = request.form['vote_Rias']
+            curs.execute(f"UPDATE topwifus SET RIAS={result}")
+            conn.commit()
+            return redirect("/")
+        if 'vote_Asia' in request.form:
+            result = request.form['vote_Asia']
+            curs.execute(f"UPDATE topwifus SET ASIA={result}")
+            conn.commit()
+            return redirect("/")
 
     curs.execute("SELECT * FROM topwifus")
     reuslt = curs.fetchone()
