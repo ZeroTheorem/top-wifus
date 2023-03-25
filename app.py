@@ -1,25 +1,31 @@
 from flask import Flask, render_template, request, redirect
+import sqlite3 as sq
+
+
+conn = sq.connect("topwifus.bd", check_same_thread=False)
+curs = sq.Cursor(conn)
+
 
 app = Flask(__name__)
-
-score = {
-    "Rias": 9.0,
-    "Asia": 8.0,
-    "Akeno": 9.9,
-    "Koneko": 7.0
-}
 
 
 @app.route("/")
 def test():
+    curs.execute("SELECT * FROM topwifus")
+    reuslt = curs.fetchone()
+    score = {"Rias": reuslt[0],
+             "Asia": reuslt[1],
+             "Akeno": reuslt[2],
+             "Koneko": reuslt[3]}
     return render_template("index.html", score=score)
 
 
 @app.route("/Rias", methods=['POST', 'GET'])
 def vote_Rias():
     if request.method == 'POST':
-        score_Rias = request.form['vote_Rias']
-        score["Rias"] = score_Rias
+        result = request.form['vote_Rias']
+        curs.execute(f"UPDATE topwifus SET RIAS={result}")
+        conn.commit()
         return redirect("/")
 
     return render_template("vote_Rias.html")
@@ -28,8 +34,9 @@ def vote_Rias():
 @app.route("/Asia", methods=['POST', 'GET'])
 def vote_Asia():
     if request.method == 'POST':
-        score_Asia = request.form['vote_Asia']
-        score["Asia"] = score_Asia
+        result = request.form['vote_Asia']
+        curs.execute(f"UPDATE topwifus SET ASIA={result}")
+        conn.commit()
         return redirect("/")
 
     return render_template("vote_Asia.html")
@@ -38,8 +45,9 @@ def vote_Asia():
 @app.route("/Akeno", methods=['POST', 'GET'])
 def vote_Akeno():
     if request.method == 'POST':
-        score_Akeno = request.form['vote_Akeno']
-        score["Akeno"] = score_Akeno
+        result = request.form['vote_Akeno']
+        curs.execute(f"UPDATE topwifus SET AKENO={result}")
+        conn.commit()
         return redirect("/")
 
     return render_template("vote_Akeno.html")
@@ -48,8 +56,9 @@ def vote_Akeno():
 @app.route("/Koneko", methods=['POST', 'GET'])
 def vote_Koneko():
     if request.method == 'POST':
-        score_Koneko = request.form['vote_Koneko']
-        score["Koneko"] = score_Koneko
+        result = request.form['vote_Koneko']
+        curs.execute(f"UPDATE topwifus SET KONEKO={result}")
+        conn.commit()
         return redirect("/")
 
     return render_template("vote_Koneko.html")
