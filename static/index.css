@@ -20,7 +20,7 @@ a {
     left: 1750px
 }
 
-.number {
+.number p {
 
     font-size: 50px;
     position: absolute;
@@ -30,7 +30,7 @@ a {
 
 }
 
-.name {
+.name p {
     font-size: 50px;
     position: absolute;
     top: 87px;
