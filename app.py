@@ -52,6 +52,26 @@ def test():
             curs.execute(f"UPDATE topwifus SET XENOVIA={result}")
             conn.commit()
 
+        if 'vote_Irina' in request.form:
+            result = request.form['vote_Irina']
+            curs.execute(f"UPDATE topwifus SET IRINA={result}")
+            conn.commit()
+
+        if 'vote_Yasaka' in request.form:
+            result = request.form['vote_Yasaka']
+            curs.execute(f"UPDATE topwifus SET YASAKA={result}")
+            conn.commit()
+
+        if 'vote_Raynare' in request.form:
+            result = request.form['vote_Raynare']
+            curs.execute(f"UPDATE topwifus SET RAYNARE={result}")
+            conn.commit()
+
+        if 'vote_Rossweisse' in request.form:
+            result = request.form['vote_Rossweisse']
+            curs.execute(f"UPDATE topwifus SET ROSSWEISSE={result}")
+            conn.commit()
+
     curs.execute("SELECT * FROM topwifus")
     result = curs.fetchone()
     score = {"Rias": result[0],
@@ -61,7 +81,11 @@ def test():
              "Kuroka": result[4],
              "Grayfia": result[5],
              "Serafall": result[6],
-             "Xenovia": result[7]}
+             "Xenovia": result[7],
+             "Irina": result[8],
+             "Yasaka": result[9],
+             "Raynare": result[10],
+             "Rossweisse": result[11]}
 
     return render_template("index.html", score=score)
 

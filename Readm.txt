@@ -1,23 +1,28 @@
-# import sqlite3 as sa
+import sqlite3 as sa
 
 
-# conn = sa.connect("topwifus.bd")
-# curs = sa.Cursor(conn)
+conn = sa.connect("topwifus.bd")
+curs = sa.Cursor(conn)
 
 
-# curs.execute("""CREATE TABLE topwifus (
-# RIAS FLOAT,
-# ASIA FLOAT,
-# AKENO FLOAT,
-# KONEKO FLOAT,
-# KUROKA FLOAT,
-# GRAYFIA FLOAT,
-# SERAFALL FLOAT,
-# XENOVIA FLOAT)""")
+curs.execute("""CREATE TABLE topwifus (
+            RIAS FLOAT,
+            ASIA FLOAT,
+            AKENO FLOAT,
+            KONEKO FLOAT,
+            KUROKA FLOAT,
+            GRAYFIA FLOAT,
+            SERAFALL FLOAT,
+            XENOVIA FLOAT,
+            IRINA FLOAT,
+            YASAKA FLOAT,
+            RAYNARE FLOAT,
+            ROSSWEISSE FLOAT)""")
 
 
-# curs.execute("""INSERT TO topwifus VALUES (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)""")
-# conn.commit()
+curs.execute(
+    """INSERT INTO topwifus VALUES (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)""")
+conn.commit()
 
-# curs.execute("""SELECT * FROM topwifus""")
-# print(curs.fetchone())
+curs.execute("""SELECT * FROM topwifus""")
+print(curs.fetchone())
