@@ -12,5 +12,9 @@ form input {
 }
 
 img {
-    width: 70%;
+    width: 60%;
+}
+
+#small {
+    font-size: 23px;
 }
