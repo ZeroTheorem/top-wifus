@@ -1,0 +1,16 @@
+.container {
+    margin-right: 16%;
+    margin-top: 10vh;
+}
+
+.lead {
+    font-size: 33px;
+}
+
+form input {
+    width: 100px;
+}
+
+img {
+    width: 70%;
+}

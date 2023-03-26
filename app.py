@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3 as sq
+from time import sleep
 
 
 conn = sq.connect("topwifus.bd", check_same_thread=False)
@@ -16,61 +17,73 @@ def test():
             result = request.form['vote_Rias']
             curs.execute(f"UPDATE topwifus SET RIAS={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Asia' in request.form:
             result = request.form['vote_Asia']
             curs.execute(f"UPDATE topwifus SET ASIA={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Akeno' in request.form:
             result = request.form['vote_Akeno']
             curs.execute(f"UPDATE topwifus SET AKENO={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Koneko' in request.form:
             result = request.form['vote_Koneko']
             curs.execute(f"UPDATE topwifus SET KONEKO={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Kuroka' in request.form:
             result = request.form['vote_Kuroka']
             curs.execute(f"UPDATE topwifus SET KUROKA={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Grayfia' in request.form:
             result = request.form['vote_Grayfia']
             curs.execute(f"UPDATE topwifus SET GRAYFIA={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Serafall' in request.form:
             result = request.form['vote_Serafall']
             curs.execute(f"UPDATE topwifus SET SERAFALL={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Xenovia' in request.form:
             result = request.form['vote_Xenovia']
             curs.execute(f"UPDATE topwifus SET XENOVIA={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Irina' in request.form:
             result = request.form['vote_Irina']
             curs.execute(f"UPDATE topwifus SET IRINA={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Yasaka' in request.form:
             result = request.form['vote_Yasaka']
             curs.execute(f"UPDATE topwifus SET YASAKA={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Raynare' in request.form:
             result = request.form['vote_Raynare']
             curs.execute(f"UPDATE topwifus SET RAYNARE={result}")
             conn.commit()
+            return redirect("/message")
 
         if 'vote_Rossweisse' in request.form:
             result = request.form['vote_Rossweisse']
             curs.execute(f"UPDATE topwifus SET ROSSWEISSE={result}")
             conn.commit()
+            return redirect("/message")
 
     curs.execute("SELECT * FROM topwifus")
     result = curs.fetchone()
@@ -88,6 +101,13 @@ def test():
              "Rossweisse": result[11]}
 
     return render_template("index.html", score=score)
+
+
+@app.route("/message", methods=['POST', 'GET'])
+def message():
+    if request.method == 'POST':
+        return redirect("/")
+    return render_template("message.html")
 
 
 if __name__ == '__main__':
