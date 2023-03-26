@@ -16,29 +16,52 @@ def test():
             result = request.form['vote_Rias']
             curs.execute(f"UPDATE topwifus SET RIAS={result}")
             conn.commit()
-            return redirect("/")
+
         if 'vote_Asia' in request.form:
             result = request.form['vote_Asia']
             curs.execute(f"UPDATE topwifus SET ASIA={result}")
             conn.commit()
-            return redirect("/")
+
         if 'vote_Akeno' in request.form:
             result = request.form['vote_Akeno']
             curs.execute(f"UPDATE topwifus SET AKENO={result}")
             conn.commit()
-            return redirect("/")
+
         if 'vote_Koneko' in request.form:
             result = request.form['vote_Koneko']
             curs.execute(f"UPDATE topwifus SET KONEKO={result}")
             conn.commit()
-            return redirect("/")
+
+        if 'vote_Kuroka' in request.form:
+            result = request.form['vote_Kuroka']
+            curs.execute(f"UPDATE topwifus SET KUROKA={result}")
+            conn.commit()
+
+        if 'vote_Grayfia' in request.form:
+            result = request.form['vote_Grayfia']
+            curs.execute(f"UPDATE topwifus SET GRAYFIA={result}")
+            conn.commit()
+
+        if 'vote_Serafall' in request.form:
+            result = request.form['vote_Serafall']
+            curs.execute(f"UPDATE topwifus SET SERAFALL={result}")
+            conn.commit()
+
+        if 'vote_Xenovia' in request.form:
+            result = request.form['vote_Xenovia']
+            curs.execute(f"UPDATE topwifus SET XENOVIA={result}")
+            conn.commit()
 
     curs.execute("SELECT * FROM topwifus")
-    reuslt = curs.fetchone()
-    score = {"Rias": reuslt[0],
-             "Asia": reuslt[1],
-             "Akeno": reuslt[2],
-             "Koneko": reuslt[3]}
+    result = curs.fetchone()
+    score = {"Rias": result[0],
+             "Asia": result[1],
+             "Akeno": result[2],
+             "Koneko": result[3],
+             "Kuroka": result[4],
+             "Grayfia": result[5],
+             "Serafall": result[6],
+             "Xenovia": result[7]}
 
     return render_template("index.html", score=score)
 
