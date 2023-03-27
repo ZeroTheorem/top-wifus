@@ -14,129 +14,87 @@ def test():
     if request.method == 'POST':
         if 'vote_Rias' in request.form:
             result = request.form['vote_Rias']
-            try:
-                curs.execute(f"UPDATE topwifus SET RIAS={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET RIAS={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Asia' in request.form:
             result = request.form['vote_Asia']
-            try:
-                curs.execute(f"UPDATE topwifus SET ASIA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET ASIA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Akeno' in request.form:
             result = request.form['vote_Akeno']
-            try:
-                curs.execute(f"UPDATE topwifus SET AKENO={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET AKENO={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Koneko' in request.form:
             result = request.form['vote_Koneko']
-            try:
-                curs.execute(f"UPDATE topwifus SET KONEKO={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET KONEKO={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Kuroka' in request.form:
             result = request.form['vote_Kuroka']
-            try:
-                curs.execute(f"UPDATE topwifus SET KUROKA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET KUROKA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Grayfia' in request.form:
             result = request.form['vote_Grayfia']
-            try:
-                curs.execute(f"UPDATE topwifus SET GRAYFIA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET GRAYFIA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Serafall' in request.form:
             result = request.form['vote_Serafall']
-            try:
-                curs.execute(f"UPDATE topwifus SET SERAFALL={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET SERAFALL={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Xenovia' in request.form:
             result = request.form['vote_Xenovia']
-            try:
-                curs.execute(f"UPDATE topwifus SET XENOVIA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET XENOVIA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Irina' in request.form:
             result = request.form['vote_Irina']
-            try:
-                curs.execute(f"UPDATE topwifus SET IRINA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET IRINA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Yasaka' in request.form:
             result = request.form['vote_Yasaka']
-            try:
-                curs.execute(f"UPDATE topwifus SET YASAKA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET YASAKA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Raynare' in request.form:
             result = request.form['vote_Raynare']
-            try:
-                curs.execute(f"UPDATE topwifus SET RAYNARE={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET RAYNARE={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Rossweisse' in request.form:
             result = request.form['vote_Rossweisse']
-            try:
-                curs.execute(f"UPDATE topwifus SET ROSSWEISSE={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET ROSSWEISSE={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Katareia' in request.form:
             result = request.form['vote_Katareia']
-            try:
-                curs.execute(f"UPDATE topwifus SET KATAREIA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET KATAREIA={result}")
+            conn.commit()
+            return redirect("/message")
 
         if 'vote_Sona' in request.form:
             result = request.form['vote_Sona']
-            try:
-                curs.execute(f"UPDATE topwifus SET SONA={result}")
-                conn.commit()
-                return redirect("/message")
-            except:
-                return redirect("/error")
+            curs.execute(f"UPDATE topwifus SET SONA={result}")
+            conn.commit()
+            return redirect("/message")
 
     else:
         curs.execute("SELECT * FROM topwifus")
@@ -164,13 +122,6 @@ def message():
     if request.method == 'POST':
         return redirect("/")
     return render_template("message.html")
-
-
-@app.route("/error", methods=['POST', 'GET'])
-def error():
-    if request.method == 'POST':
-        return redirect("/")
-    return render_template("error.html")
 
 
 if __name__ == '__main__':
