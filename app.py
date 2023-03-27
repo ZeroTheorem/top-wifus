@@ -119,6 +119,25 @@ def test():
                 return redirect("/message")
             except:
                 return redirect("/error")
+
+        if 'vote_Katareia' in request.form:
+            result = request.form['vote_Katareia']
+            try:
+                curs.execute(f"UPDATE topwifus SET KATAREIA={result}")
+                conn.commit()
+                return redirect("/message")
+            except:
+                return redirect("/error")
+
+        if 'vote_Sona' in request.form:
+            result = request.form['vote_Sona']
+            try:
+                curs.execute(f"UPDATE topwifus SET SONA={result}")
+                conn.commit()
+                return redirect("/message")
+            except:
+                return redirect("/error")
+
     else:
         curs.execute("SELECT * FROM topwifus")
         result = curs.fetchone()
@@ -133,7 +152,9 @@ def test():
                  "Irina": result[8],
                  "Yasaka": result[9],
                  "Raynare": result[10],
-                 "Rossweisse": result[11]}
+                 "Rossweisse": result[11],
+                 "Katareia": result[12],
+                 "Sona": result[13], }
 
         return render_template("index.html", score=score)
 

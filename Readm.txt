@@ -17,11 +17,13 @@ curs.execute("""CREATE TABLE topwifus (
             IRINA FLOAT,
             YASAKA FLOAT,
             RAYNARE FLOAT,
-            ROSSWEISSE FLOAT)""")
+            ROSSWEISSE FLOAT,
+            KATAREIA FLOAT,
+            SONA FLOAT)""")
 
 
 curs.execute(
-    """INSERT INTO topwifus VALUES (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)""")
+    """INSERT INTO topwifus VALUES (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)""")
 conn.commit()
 
 curs.execute("""SELECT * FROM topwifus""")
