@@ -10,11 +10,11 @@ engine = sa.create_engine('sqlite:///topwifus.db')
 @app.route("/", methods=['POST', 'GET'])
 def test():
     if request.method == "POST":
-        for x, y in request.form.items():
-            with engine.connect() as conn:
-                conn.execute(sa.update(topwifus).where(
-                    topwifus.c.name_form == x).values(score=y))
-                conn.commit()
+        result = tuple(request.form.items())
+        with engine.connect() as conn:
+            conn.execute(sa.update(topwifus).where(
+                topwifus.c.name_form == result[0][0]).values(score=result[0][1]))
+            conn.commit()
 
     with engine.connect() as conn:
         result = conn.execute(sa.select(topwifus)).fetchall()
