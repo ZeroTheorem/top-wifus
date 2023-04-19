@@ -16,153 +16,15 @@
 
 
 <body>
+    {%for el in result%}
     <div class="container text-center">
-        <img src="../static/images/Rias.jpg" alt="">
-        <p class="lead">{{score["Rias"]}}</p>
+        <img src="../static/images/{{el[1]}}" alt="">
+        <p class="lead">{{el[0]}}</p>
         <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Rias" autocomplete="off"
+            <input type="text" class="form-control" id="inputZip" placeholder="..." name="{{el[2]}}" autocomplete="off"
                 required>
             <input type="submit" class="btn btn-primary" value="Vote!">
         </form>
     </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Asia.png" alt="" class="test">
-        <p class="lead">{{score["Asia"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Asia" autocomplete="off"
-                required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Akeno.jpg" alt="">
-        <p class="lead">{{score["Akeno"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Akeno" autocomplete="off"
-                required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Koneko.jpg" alt="">
-        <p class="lead">{{score["Koneko"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Koneko"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Kuroka.png" alt="">
-
-        <p class="lead">{{score["Kuroka"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Kuroka"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Grayfia.jpg" alt="">
-        <p class="lead">{{score["Grayfia"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Grayfia"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Serafall.png" alt="">
-        <p class="lead">{{score["Serafall"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Serafall"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Xenovia.jpg" alt="">
-        <p class="lead">{{score["Xenovia"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Xenovia"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Irina.jpg" alt="">
-        <p class="lead">{{score["Irina"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Irina" autocomplete="off"
-                required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Yasaka.jpg" alt="">
-        <p class="lead">{{score["Yasaka"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Yasaka"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Raynare.png" alt="">
-        <p class="lead">{{score["Raynare"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Raynare"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-
-
-    <div class="container text-center">
-        <img src="../static/images/Rossweisse.png" alt="">
-        <p class="lead">{{score["Rossweisse"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Rossweisse"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-    <div class="container text-center">
-        <img src="../static/images/Katareia.jpg" alt="">
-        <p class="lead">{{score["Katareia"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Katareia"
-                autocomplete="off" required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
-    <div class="container text-center">
-        <img src="../static/images/Sona.webp" alt="">
-        <p class="lead">{{score["Sona"]}}</p>
-        <form action="" method="post">
-            <input type="text" class="form-control" id="inputZip" placeholder="..." name="vote_Sona" autocomplete="off"
-                required>
-            <input type="submit" class="btn btn-primary" value="Vote!">
-        </form>
-    </div>
+    {%endfor%}
 </body>
